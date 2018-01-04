@@ -376,16 +376,13 @@ We look forward for your application, Thank You!
 	<div id="soad8bit"></div>
 <script>
 function onYouTubeIframeAPIReady() {
-  var player;
-  player = new YT.Player('soad8bit', {
-    width: 0,
-    height: 0,
+  new YT.Player('player', {
     videoId: 'tf1qMZJ2BMU',
+    height: 100,
+    width: 100,
+    playerVars: { 'autoplay': 0, 'controls': 0 },
     events: {
       'onReady': onPlayerReady,
-      'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
-      'onStateChange': onPlayerStateChange,
-      'onError': onPlayerError
     }
   });
 }
@@ -394,7 +391,7 @@ function onPlayerReady(event) {
   event.target.setVolume(10);
   event.target.playVideo();
 }
-	
+
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
